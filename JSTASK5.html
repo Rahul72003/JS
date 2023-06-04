@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Reverser</title>
+</head>
+<body>
+  <h1>Enter a number:</h1>
+  
+  <form onsubmit="reverseNumber(event)">
+    <label for="inputNumber">Number:</label>
+    <input type="number" id="inputNumber" required>
+    <button type="submit">Reverse</button>
+  </form>
+  <br>
+  <br>
+  
+  <div id="result"></div>
+  
+  <script>
+    function reverseNumber(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      var inputNumber = parseInt(document.getElementById('inputNumber').value);
+      var reversedNumber = parseFloat(inputNumber.toString().split('').reverse().join(''));
+      
+      var resultElement = document.getElementById('result');
+      resultElement.innerHTML = 'The reverse of the number is: ' + reversedNumber;
+    }
+  </script>
+</body>
+</html>
