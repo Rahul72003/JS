@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alphabetical Order Sorter</title>
+</head>
+<body>
+  <h2>Enter a string:</h2>
+  
+  <form onsubmit="sortString(event)">
+    <label for="inputString">String:</label>
+    <input type="text" id="inputString" required>
+    <button type="submit">Sort</button>
+  </form>
+  <br>
+  
+  <div id="result"></div>
+  
+  <script>
+    function sortString(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      var inputString = document.getElementById('inputString').value;
+      var sortedString = inputString.split('').sort().join('');
+      
+      var resultElement = document.getElementById('result');
+      resultElement.innerHTML = 'The string when arranged in alphabetical order gives: ' + sortedString;
+    }
+  </script>
+</body>
+</html>
